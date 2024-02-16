@@ -9,16 +9,14 @@ export const routes: Routes = [{
     path: '', redirectTo: 'landing', pathMatch: 'full'
 },
 {
-    path: 'login', component: LoginComponent
-}, {
-    path: 'navbar', component: NavbarComponent,
+    path: 'login', component: LoginComponent,
     children: [
         {
             path: 'dashboard', component: DashboardComponent
         }
     ]
 }, {
-    path: 'Register', component: RegisterComponent
+    path: 'register', component: RegisterComponent
 }, {
     path: '', component: LandingComponent
 }

@@ -9,6 +9,7 @@
 .Title {
   font-size: 20px;
   font-weight: bold;
+  color: #7f7f7f;
 }
 
 ul {
@@ -20,21 +21,19 @@ ul {
 
 li {
   margin-right: 15px;
-}
-
-li a {
-  text-decoration: none;
-  color: #666;
-  padding: 10px 15px;
-  border-radius: 5px;
   transition: background-color 0.3s;
+  cursor:pointer;
+  border-radius: 5px;
+  padding: 10px;
+  border: #03e9f4 1px solid;
+  color: #7f7f7f;
 }
 
-li a:hover {
+li:hover {
   background-color: #ddd;
 }
 
-li.active a {
+li.active{
   color: white;
   background-color: #03e9f4;
 }

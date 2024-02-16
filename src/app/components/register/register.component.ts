@@ -1,32 +1,37 @@
-import { Component } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [NavbarComponent, ReactiveFormsModule, CommonModule],
+  imports: [CommonModule, ReactiveFormsModule, NavbarComponent],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  title = 'Start managing your Projects'
+  title = 'Start managing your Projects';
 
-  registerForm!: FormGroup
+  myFormReg!: FormGroup;
 
-  constructor(private formbuilder:FormBuilder){
- 
-    this.registerForm = this.formbuilder.group({
-      name: ['', [Validators.required]],
+  constructor(private fb: FormBuilder) {
+    this.myFormReg = this.fb.group({
+      name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone_number: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9 ]*')]]
-    })
+      phone_number: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
   }
 
-  registerUser(){
-    console.log(this.registerForm);
-    
+  registerUser() {
+    if (this.myFormReg.valid) {
+
+      console.log(this.myFormReg.value);
+
+
+    } else {
+      console.log("Form is not valid");
+    }
   }
 }
