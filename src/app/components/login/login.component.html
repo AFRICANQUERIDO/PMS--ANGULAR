@@ -1,0 +1,48 @@
+<!-- <p>login works!</p> -->
+
+<div (ngsubmit) = "onLogin()" class="login-wrapper">
+  <!-- <div class="login-form">
+    <h1>Login</h1>
+    <div class="top">
+        <input [(ngModel)]=loginObject.email type="email" name="email" id="email" placeholder="Enter your email">
+        <input [(ngModel)]=loginObject.password type="text" name="password" id="password" placeholder="Enter your password">
+    </div>
+    <div class="bottom">
+        <button type="submit" class="loginBtn" (click)="onLogin()">Login</button>
+        <a href="">Forgot Password</a>
+    </div>
+ </div> -->
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form>
+      <div class="user-box">
+        <input
+          [(ngModel)]="loginObject.email"
+          type="email"
+          name="email"
+          required=""
+        />
+        <label>Email</label>
+      </div>
+      <div class="user-box">
+        <input
+          [(ngModel)]="loginObject.password"
+          type="password"
+          name="password"
+          required=""
+        />
+        <label>Password</label>
+      </div>
+      <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <button type="submit">Submit</button>
+      </a>
+    </form>
+  </div>
+</div>
+
+<app-navbar></app-navbar>
